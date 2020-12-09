@@ -5,6 +5,7 @@
   --reserve-text-color: #ffffff;
   --primary-font-family: "Roboto", sans-serif;
   --secondary-font-family: "Raleway", sans-serif;
+  --card-set-gap: 30px;
 }
 html {
   box-sizing: border-box;
@@ -128,13 +129,26 @@ img {
   letter-spacing: 0.02em;
   color: var(--secondary-text-color);
 }
+.contact-icon {
+  margin-right: 10px;
+  fill: currentColor;
+}
 /* =========== HERO ==========*/
 .hero {
   text-align: center;
   padding-top: 200px;
   padding-bottom: 200px;
   background-color: #2f303a;
+  background-image: linear-gradient(
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url("../images/hero.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
+
 .hero-title {
   max-width: 696px;
   margin-left: auto;
@@ -191,12 +205,23 @@ img {
   letter-spacing: 0.03em;
   color: var(--secondary-text-color);
 }
+.item-icon {
+  width: 70px;
+  height: 70px;
+}
+.item-icon-box {
+  margin-bottom: 30px;
+  padding: 25px 100px;
+  width: 270px;
+  height: 120px;
+  background: #f5f4fa;
+  border-radius: 4px;
+}
 /*  ========РАБОТА======== */
 .work {
   padding-top: 94px;
   padding-bottom: 94px;
 }
-
 .work-list {
   display: flex;
   justify-content: space-between;
@@ -252,6 +277,74 @@ img {
   text-align: center;
   color: var(--secondary-text-color);
 }
+.social-list {
+  display: flex;
+  justify-content: center;
+}
+.social-list-item:not(:last-child) {
+  margin-right: 10px;
+}
+.social-list-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: #afb1b8;
+}
+.social-list-icon {
+  width: 20px;
+  height: 20px;
+}
+.social-list-link:hover,
+.social-list-link:focus {
+  background-color: var(--accent-color);
+  color: var(--reserve-text-color);
+}
+
+.social-list-link:hover .social-list-icon,
+.social-list-link:focus .social-list-icon {
+  fill: currentColor;
+}
+
+/* ========= КЛИЕНТЫ ======== */
+.clients-list {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.clients-list-item:not(:last-child) {
+  margin-right: 30px;
+}
+.clients-title {
+  margin-bottom: 50px;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.16;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: var(--primary-text-color);
+}
+.clients-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #afb1b8;
+  width: 170px;
+  height: 90px;
+  border: 1px solid;
+  border-radius: 4px;
+}
+.clients-link:hover,
+.clients-link:focus {
+  color: var(--accent-text-color);
+  border-color: var(--accent-text-color);
+}
+.clients-logo {
+  fill: currentColor;
+}
+
 /* ====== ФУТЕР ======== */
 .footer {
   padding-top: 60px;
@@ -275,6 +368,43 @@ img {
 }
 .main-contacts-link.map {
   color: var(--reserve-text-color);
+}
+
+/* =====Футер соцсети======= */
+.footer-social {
+  display: flex;
+  align-items: baseline;
+}
+.join {
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--reserve-text-color);
+}
+.footer-social-list {
+  display: flex;
+  justify-content: space-between;
+  width: 206px;
+}
+.footer-social-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--reserve-text-color);
+}
+.footer-social-link:hover,
+.footer-social-link:focus {
+  background-color: var(--accent-text-color);
+}
+.social-logo {
+  fill: currentColor;
 }
 /* ======== ПОРТФОЛИО ========== */
 .portfolio {
@@ -315,15 +445,19 @@ img {
 .project-list {
   display: flex;
   flex-wrap: wrap;
+  margin-left: calc(-1 * var(--card-set-gap));
+  margin-top: calc(-1 * var(--card-set-gap));
 }
+.project-list-item:hover,
+.project-list-item:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
 .project-list-item {
-  width: 370px;
-}
-.project-list-item:not(:nth-child(3n)) {
-  margin-right: 30px;
-}
-.project-list-item:not(:nth-last-child(-n + 3)) {
-  margin-bottom: 30px;
+  flex-basis: calc(100% / 3 - var(--card-set-gap));
+  margin-left: var(--card-set-gap);
+  margin-top: var(--card-set-gap);
 }
 .project-list-item-title {
   margin-bottom: 4px;
