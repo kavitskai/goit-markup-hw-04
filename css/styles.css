@@ -299,7 +299,7 @@ img {
 }
 .social-list-link:hover,
 .social-list-link:focus {
-  background-color: var(--accent-color);
+  background-color: var(--accent-text-color);
   color: var(--reserve-text-color);
 }
 
