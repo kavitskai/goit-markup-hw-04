@@ -294,8 +294,7 @@ img {
   color: #afb1b8;
 }
 .social-list-icon {
-  width: 20px;
-  height: 20px;
+  fill: currentColor;
 }
 .social-list-link:hover,
 .social-list-link:focus {
@@ -369,11 +368,13 @@ img {
 .main-contacts-link.map {
   color: var(--reserve-text-color);
 }
-
-/* =====Футер соцсети======= */
-.footer-social {
+.footer .container {
   display: flex;
   align-items: baseline;
+}
+/* =====Футер соцсети======= */
+.footer-social {
+  margin-left: 70px;
 }
 .join {
   margin-bottom: 20px;
